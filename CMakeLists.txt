@@ -23,7 +23,6 @@ if(IMGUI_ENABLE_OPENGL3)
     
     find_package(OpenGL REQUIRED)
     list(APPEND BACKEND_LIBS ${OPENGL_LIBRARIES})
-    target_compile_definitions(imgui PUBLIC IMGUI_ENABLE_OPENGL3)
 endif()
 
 if(IMGUI_ENABLE_VULKAN)
@@ -32,7 +31,6 @@ if(IMGUI_ENABLE_VULKAN)
     
     find_package(Vulkan REQUIRED)
     list(APPEND BACKEND_LIBS Vulkan::Vulkan)
-    target_compile_definitions(imgui PUBLIC IMGUI_ENABLE_VULKAN)
 endif()
 
 add_library(imgui STATIC ${IMGUI_SOURCES})
